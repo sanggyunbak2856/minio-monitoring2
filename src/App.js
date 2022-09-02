@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import MinioHeader from './component/MinioHeader';
+import FileContainer from './component/FileContainer';
+import AWS from 'aws-sdk';
+
+const s3 = new AWS.S3({
+  endpoint: "http://127.0.0.1:19000",
+  port: "9000",
+  accessKeyId: "minio",
+  secretAccessKey: "miniostorage",
+  signatureVersion: "v4",
+  s3ForcePathStyle:  true
+})
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MinioHeader />
+      <FileContainer s3={s3}/>
     </div>
   );
 }
