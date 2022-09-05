@@ -5,12 +5,12 @@ import FileContainer from './component/FileContainer';
 import AWS from 'aws-sdk';
 
 const s3 = new AWS.S3({
-  endpoint: "http://127.0.0.1:19000",
-  port: "9000",
+  endpoint: "http://localhost:19001",
+  port: "19001",
   accessKeyId: "minio",
   secretAccessKey: "miniostorage",
   signatureVersion: "v4",
-  s3ForcePathStyle:  true
+  s3ForcePathStyle:  true,
 })
 
 function App() {

@@ -11,7 +11,7 @@ const FileContainer = ({s3}) => {
     const getFileList = async (bucket) => {
         try {
             const param = {
-                Bucket: bucket
+                Bucket: bucket,
             }
             const res = await s3.listObjects(param).promise()
             bucket === "test1" ? setNormalFileList(res.Contents) : setErrorFileList(res.Contents)
