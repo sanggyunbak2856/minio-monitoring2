@@ -18,8 +18,8 @@ const ErrorFileMonitoring = ({errorFileList}) => {
                             </thead>
                             <tbody>
                                 {
-                                    errorFileList.map(item => 
-                                        <tr key={item.key}> 
+                                    errorFileList.map((item, key) => 
+                                        <tr key={item.key + "_" + key}> 
                                             <td>{item.Key}</td>
                                             <td>{item.Size}</td>
                                             <td style={{fontSize: 14}}>{item.LastModified.toString()}</td>

@@ -24,8 +24,8 @@ const NormalFileMonitoring = ({normalFileList}) => {
                         </thead>
                         <tbody>
                             {
-                                normalFileList.map(item => 
-                                    <tr key={item.key}> 
+                                normalFileList.map((item, key) => 
+                                    <tr key={item.key + "_" + key}> 
                                         <td>{item.Key}</td>
                                         <td>{item.Size}</td>
                                         <td style={{fontSize: 14}}>{item.LastModified.toString()}</td>

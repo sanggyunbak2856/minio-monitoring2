@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css'
 import NormalFileMonitoring from "./filemonitoring/NormalFileMonitoring";
 import ErrorFileMonitoring from "./filemonitoring/ErrorFileMonitoring";
+import axios from "axios";
 
 const FileContainer = ({s3}) => {
     const [normalFileList, setNormalFileList] = useState([]);
@@ -27,7 +28,7 @@ const FileContainer = ({s3}) => {
     }, [])
 
     return (
-        <div className="container h-75 border bg-light">
+        <div className="container h-50 border bg-light">
             <div className="row h-100">
                 <NormalFileMonitoring normalFileList={normalFileList}/>
                 <ErrorFileMonitoring errorFileList={errorFileList}/>
