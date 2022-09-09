@@ -84,10 +84,14 @@ function App() {
     }
   }
 
+  /**
+   * 오브젝트 한개 삭제
+   */
+
   return (
     <div className="App container vh-100">
       <MinioHeader />
-      <FileContainer normalFileList={normalFileList} errorFileList={errorFileList}/>
+      <FileContainer normalFileList={normalFileList} errorFileList={errorFileList} s3={s3}/>
       <ErrorContainer errorCount={errorCount} deleteObjects={deleteObjects} getFileList={getFileList}/>
     </div>
   );
