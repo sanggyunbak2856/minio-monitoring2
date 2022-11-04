@@ -62,7 +62,7 @@ const ErrorFileMonitoring = ({errorFileList, s3}) => {
                     Error File
                 </div>
                 <div className="h-100 border p-2 mb-1">
-                    <table className="table table-hover">
+                    <table className="table table-hover overflow-auto">
                             <thead>
                                 <tr>
                                     <th>Name</th>
